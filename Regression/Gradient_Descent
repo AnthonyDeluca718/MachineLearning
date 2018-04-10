@@ -1,0 +1,16 @@
+=== Understanding Stochastic Gradient Descent:\
+
+1) Simples case:
+
+MINIMIZE (1/2)[(x - y)^2 + (x + y)^2] (y > 0)
+x -> x + e(y-x) = (1-e)x + ey
+(1-e)x + ey -> (1-e)((1-e)x + ey) + e(-y)
+  = (x-ex + ey) - e(x-ex + ey) - ey)
+  = x-ex + ey - ex + e^2x - e^2y - ey
+  = x - 2ex + ey -ey
+  = (1-2e)x
+
+So we trivially get convergence
+
+
+2) Minimizing (1/2)*SUM (x - yi)^2
