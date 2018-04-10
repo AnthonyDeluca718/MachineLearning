@@ -1,7 +1,27 @@
 Goal:
 
-minimize SUM (bi*xi - yi)^2 = <Xb - y, Xb - y> y is nx1, X is nxm, b is mx1. n > m
+minimize F(b) = SUM (bi*xi - yi)^2 = <Xb - y, Xb - y> (y is nx1, X is nxm, b is mx1. n > m)
 
-<X(b+e) - y, X(b+e) - y>
-= <Xb - y, Xb - y> + 2*<Xb - y, Xe - y> + <Xe - y, Xe - y>
-= C + 
+i - <Xb - y, Xb - y> = <Xb, Xb> + <y,y> - 2 <Xb, y>
+ii - <X(b+ e), X(b + e)> = <Xb, Xb> + <e, e> + 2<Xb, Xe> = C + 0 + 2<X'Xb, e>
+iii - <X(b + e), y> = <Xb, y> + <Xe, y> = C + <X'y, e>
+
+F'(b)(e) = 2*<X'Xb - X'y, e>
+F' = 2*X'Xb - X'y
+
+normal equations: X'Xb = X'y
+
+SVD:
+X = UEV' (where U is nxm, V, E are mxm,  U'U = V'V = Im)
+X' = VEU'
+X'X = VDV' (D = E^2)
+=> VDV'b = VEU'y
+=> DV'b = EU'y
+=> b = V(E^-1)U'y
+
+
+Solution if some singular values are near zero:
+b = V(E+)U' (where E+ is the inverse of E except zeros are left in place)
+
+Why does this work?
+Answer:
