@@ -1,0 +1,7 @@
+Goal:
+
+minimize SUM (bi*xi - yi)^2 = <Xb - y, Xb - y> y is nx1, X is nxm, b is mx1. n > m
+
+<X(b+e) - y, X(b+e) - y>
+= <Xb - y, Xb - y> + 2*<Xb - y, Xe - y> + <Xe - y, Xe - y>
+= C + 
