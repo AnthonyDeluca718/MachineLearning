@@ -24,4 +24,20 @@ Solution if some singular values are near zero:
 b = V(E+)U' (where E+ is the inverse of E except zeros are left in place)
 
 Why does this work?
-Answer:
+
+DV'b = EU'y [no inverses needed.]
+
+Assume the singular values are ordered in descending order and sk+1, ..., sm = 0 and the rest non-zero.
+
+In this we can choose any value we like for bk+1, ..., bm. In particular we can choose 0.
+
+Drop the last columns of U and V to get U^ and V^
+
+Let b^ solve D^V^'b^ = E^U^'y^ (D^ and E^ are kxk, V^ is kxm, U^ is nxk)
+
+Then also b^ solves the original equations the extra equations are automatically satisfied as 0 = 0.
+
+b = b^ = V^ * inv(E^) * U^' = V(E+)U' because the zeros cancel the extra rows
+
+
+Implementation note: tol = ε⋅max(m,n)⋅max(Σ) is reasonable (numpy/Matlab have used this)
