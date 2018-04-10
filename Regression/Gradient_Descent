@@ -14,3 +14,22 @@ So we trivially get convergence
 
 
 2) Minimizing (1/2)*SUM (x - yi)^2
+x -> x + e(yi - x1) = (1-e)x + e*yi
+assume xk-1 = (1-[k-1]e)x0 + e(y1 + ... + yk-1)
+xk = (1-e)xk-1 + e*yk = (1-e)(1-[k-1]e)x0 + (1-e)e(y1 + ... + yk-``) + e*yk
+  = (1-ke)x0 + e(y1 + ... + yk-1) + e*yk
+  = (1-ke)x0 + e(y1 + ... + yk)
+
+so xN = (1-ne)x0 + e(y1 + ... yk) = (1-ne)x0 + ne(AVG(y))
+
+changing variables we can take AVG(y) = 0
+
+so xN = (1-ne)x0 -> this process converges to 0
+
+
+3) Batch/Random Gradient Descent
+
+X will move toward the average value of the sample/batch. So large batches/n-count/samples of batches will move x toward the true average value.
+
+
+4) Why can we think in terms of 1-D case?
