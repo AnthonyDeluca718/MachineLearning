@@ -32,4 +32,13 @@ so xN = (1-ne)x0 -> this process converges to 0
 X will move toward the average value of the sample/batch. So large batches/n-count/samples of batches will move x toward the true average value.
 
 
-4) Why can we think in terms of 1-D case?
+4) Higher Dimensional Case: minimize <Ax-b, Ax-b>
+
+A = UEV' (reduced svd), assume A is full rank
+let x = V*w, b = Uz
+
+x -> x + e(ai*x - bi)*ai'
+  = V*w + e(pi*UEV'*Vx - pi*Uz)*VEU'*pi'
+  = V*w + e*pi*U(Ex - z)*VEU'*pi'
+  = V*[w + e*pi*UE(x - inv(E)z)*EU'*pi'] note: only changes ith row. Need to check math
+  = V*[w + e]
