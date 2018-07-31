@@ -1,0 +1,23 @@
+-- Argument for speed of grad descent convergence (and maximum speed)
+-- Argument for batch converging (1 + X + X^2 + X^3 argument)
+-- explanation of where grad descent comes from (just applied to cost function right??)
+
+-- Normal Equations code
+-- Classic grad descent code
+-- Stochastic grad descent code
+-- Batch grad descent code
+-- Get rid of B0 in all alg
+
+Regularized Gradient Descent:
+-- Argument it works (p sure just perturbation by lambda-Id)
+-- Batch implementation
+-- Cross validation to determine parameter
+
+Data:
+-- Load Boston Housing Data in Python
+-- Housing Price Prediction
+
+
+=== Long Term:
+-- Bias Variance Trade
+-- KL-Divergence
